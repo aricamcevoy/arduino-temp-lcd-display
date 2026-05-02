@@ -1,31 +1,40 @@
 ## Overview
-Embedded C/C++ project using an Arduino Mega, MAX30205 temperature sensor, and 16x2 LCD to display averaged temperature readings.
+
+This project uses an Arduino and an I2C temperature sensor to measure temperature, calculate an average over time, and display the result on a 16x2 LCD. The system samples temperature data every second, computes a rolling average, and updates the display at regular intervals for stable readings.
+
+---
 
 ## Features
-- Reads temperature data from MAX30205 over I2C
-- Converts temperature from Celsius to Fahrenheit
-- Displays averaged temperature on 16x2 LCD
-- Updates LCD every 10 seconds
-- Uses `millis()` for non-blocking timing
-- Clears only the updated display line to reduce flicker
+
+- Reads temperature data from an I2C sensor
+- Converts raw sensor data to Celsius and Fahrenheit
+- Averages readings over time for stability
+- Updates LCD display every 10 seconds
+- Clears and refreshes display for readability
+
+---
 
 ## Hardware
-- Arduino Mega 2560 / Elegoo Mega R3
-- MAX30205 temperature sensor
-- 16x2 LCD
-- Potentiometer for LCD contrast
+
+- Arduino Mega (Elegoo Mega R3)
+- I2C temperature sensor
+- 16x2 LCD display
 - Breadboard and jumper wires
 
-## Known Issue
-Temperature readings are currently incorrect/negative due to unstable MAX30205 header contact. The sensor is unsoldered, and stable readings are expected after soldering the header pins.
+---
 
-## Debugging Notes
-- Verified LCD output and contrast control
-- Fixed LCD issue by grounding RW pin
-- Verified I2C detection at address `0x48`
-- Identified intermittent sensor behavior caused by mechanical contact issues
-- Implemented temperature conversion (C -> F)
+## Calibration & Validation
 
-## Next Steps
-- Solder MAX30205 header pins
-- Re-test temperature readings
+Temperature readings were validated against local surface measurements rather than a wall thermostat. Differences were observed due to sensor placement and environmental conditions. The sensor was confirmed to produce consistent and accurate readings relative to its immediate surroundings.
+
+A calibration offset variable is included in the code to allow adjustment if needed based on environment.
+
+---
+
+## What I Learned
+
+- Debugging I2C communication issues
+- Interpreting raw sensor data and correcting byte order
+- Soldering and improving joint quality
+- Implementing timing logic using "millis()"
+- Validating sensor accuracy in real-world conditions
