@@ -38,3 +38,12 @@ A calibration offset variable is included in the code to allow adjustment if nee
 - Soldering and improving joint quality
 - Implementing timing logic using "millis()"
 - Validating sensor accuracy in real-world conditions
+
+---
+
+## Latest Progress
+- Re-soldered and replaced MAX30205 temperature sensor module
+- Resolved intermittent I2C communication issues
+- Implemented stable 10-second averaged temperature readings
+- LCD now reliably displays Fahrenheit output
+- Verified live temperature response through thermal touch testing
