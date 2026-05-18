@@ -75,7 +75,7 @@ float readTemp() {
     Serial.print(" | raw: ");
     Serial.println(raw);
 
-    return raw / 1024.0;
+    return raw * 0.00390625;
   }
 
   return -1000;
