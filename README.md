@@ -47,3 +47,8 @@ A calibration offset variable is included in the code to allow adjustment if nee
 - Implemented stable 10-second averaged temperature readings
 - LCD now reliably displays Fahrenheit output
 - Verified live temperature response through thermal touch testing
+
+
+
+https://github.com/user-attachments/assets/3dfeca17-b79e-4901-9ed3-bd520972195f
+
